@@ -5,3 +5,7 @@ Research group in charge of investigating CISI dataset
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CRinHer/Phys-Cog-CISI-Group/blob/main/notebooks/neural_mi_tutorials.ipynb#)
 
 This repository contains our data analysis notebooks, scripts, and documentation. 
+
+# Data Access
+Raw EEG data files are **not tracked in this repository**. 
+Download them from the shared Google Drive.
