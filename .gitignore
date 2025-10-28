@@ -1,4 +1,4 @@
 # Ignore unzipped files in the data directory
 data/raw/*
-!data/raw/*.zip
+data/raw/*.zip
 !data/README.md
