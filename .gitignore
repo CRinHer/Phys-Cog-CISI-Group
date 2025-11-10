@@ -1,3 +1,4 @@
 # Ignore unzipped files in the data directory
 data/*
 !data/README.md
+results/*
