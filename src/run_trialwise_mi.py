@@ -26,7 +26,7 @@ def run_trialwise_mi(
     random_seed=42,
     label="Condition",
     ch_pair=None,
-    out_dir="../data/processed/mi_results",
+    out_dir="../results/trialwise_mi_results",
     resume=True,
 ):
     """
@@ -67,7 +67,7 @@ def run_trialwise_mi(
             'n_layers': 2,
             'learning_rate': 1e-3,
             'batch_size': 128,
-            'n_epochs': 300,
+            'n_epochs': 500,
             'patience': 30,
         }
 
@@ -111,6 +111,21 @@ def run_trialwise_mi(
 
         x = x_trials[i][None, :]
         y = y_trials[i][None, :]
+
+        sfreq = 512
+        t = np.arange(x_trials.shape[1]) / sfreq  # time in seconds
+        t.reshape(-1, 1)
+
+        print(t.shape, x_trials[i].shape, y_trials[i].shape)
+        plt.figure(figsize=(10, 5))
+        plt.plot(t, x_trials[i], label="C3")
+        plt.plot(t, y_trials[i], label="T7")
+        plt.xlabel("Time (s)")
+        plt.ylabel("Amplitude (normalized)")
+        plt.title(f"Trial {i+1}: C3 vs T7")
+        plt.legend()
+        plt.tight_layout()
+        plt.show()
 
         if np.std(x) < 1e-6 or np.std(y) < 1e-6:
             print(f"Skipping trial {trial_num} (flat signal)")

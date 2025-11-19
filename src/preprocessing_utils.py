@@ -2,7 +2,6 @@ import numpy as np
 import mne
 from pathlib import Path
 
-
 def preprocess_subject_data(
     protocol_folder: str,
     subject_num: int,
