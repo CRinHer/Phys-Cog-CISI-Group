@@ -117,6 +117,7 @@ def run_trialwise_mi(
         t.reshape(-1, 1)
 
         print(t.shape, x_trials[i].shape, y_trials[i].shape)
+        print(x.shape, y.shape)
         plt.figure(figsize=(10, 5))
         plt.plot(t, x_trials[i], label="C3")
         plt.plot(t, y_trials[i], label="T7")
